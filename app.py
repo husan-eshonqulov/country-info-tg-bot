@@ -3,7 +3,6 @@ import requests
 
 from aiogram import Bot, Dispatcher, executor, types
 from config import API_TOKEN
-from aiogram import utils
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -15,7 +14,7 @@ base_url = 'https://restcountries.com/v3.1'
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await message.answer('Thank you for choosing us 😊!')
+    await message.answer('Thanks for choosing us 😊!')
 
 @dp.message_handler(commands=['help'])
 async def send_help(message: types.Message):
@@ -70,8 +69,9 @@ async def echo(message: types.Message):
               f"🌐 <b>Region:</b> {country['region']} \n" \
               f"🗺 <b>Subregion:</b> {country['subregion']} \n" \
               f"⛳ <b>Area:</b> {country['area']} km² \n" \
-              f"🧩 <b>Borders:</b> {country['borders']} \n" \
-              f"🕐 <b>Time Zones:</b> {country['timezones']} \n"
+              f"🕐 <b>Time Zones:</b> {country['timezones']} \n" \
+              f"🔍 <b>CCA:</b> {country['cca2']}, {country['cca3']} \n" \
+              f"🧩 <b>Borders:</b> {country['borders']} \n"
     await message.answer_photo(photo=country['flag'], caption=caption, parse_mode='HTML')
 
 def get_att_val(obj, att):
