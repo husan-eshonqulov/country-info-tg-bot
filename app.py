@@ -19,10 +19,7 @@ async def send_welcome(message: types.Message):
 @dp.message_handler(commands=['help'])
 async def send_help(message: types.Message):
     await message.answer('This bot is used to get short information about a country 🌍. \n'
-                         'Available commands: \n'
-                         '⚡️ start - run the bot \n'
-                         '⚡️ help - get help \n'
-                         '⚡️ about - get info about the bot')
+                         'You can search by name, capital or cca code like uzbekistan | tashkent | uz | uzb.')
 
 @dp.message_handler(commands=['about'])
 async def send_about(message: types.Message):
