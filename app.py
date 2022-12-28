@@ -23,8 +23,7 @@ async def send_help(message: types.Message):
 
 @dp.message_handler(commands=['about'])
 async def send_about(message: types.Message):
-    await message.answer('This bot was created for MohirFest22. Its main purpose is to get brief information 📖 about a country. \n'
-                         '☎️ Contact: @husan_eshonqulov')
+    await message.answer('Its main purpose is to get brief information 📖 about a country.')
 
 @dp.message_handler()
 async def echo(message: types.Message):
